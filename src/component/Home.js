@@ -2,9 +2,12 @@ import React from 'react'
 import { faker } from '@faker-js/faker';
 import SingleProduct from './SingleProduct';
 import './style.css'
+import { ContextCart } from '../Context';
 
 faker.seed(100)
-function Home({ cart, setCart }) {
+function Home({ }) {
+
+    const { cart, setCart } = React.useContext(ContextCart)
 
 
     const productList = [...Array(30)].map(() => ({
